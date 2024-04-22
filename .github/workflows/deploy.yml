@@ -1,0 +1,29 @@
+name: Deploy ML Model Web App
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: SSH into server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: root
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          script: |
+            cd Predictive-Maintenance
+            git pull origin main
+            docker rm -f $(docker ps -aq)
+            docker rmi -f $(docker images -aq)
+            docker-compose build
+            docker-compose up -d

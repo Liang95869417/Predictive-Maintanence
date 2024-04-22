@@ -16,7 +16,7 @@ from src.utils import EntityNotFoundError
 from src.utils import get_reports_mapping
 from src.utils import list_periods
 
-REPORTS_DIR_NAME: Text = "reports"
+REPORTS_DIR_NAME: Text = "frontend/reports"
 
 st.set_page_config(layout='wide', page_title='Monitoring Reports')
 
