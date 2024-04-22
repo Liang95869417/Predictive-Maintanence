@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/2b3fa345ee844f13af9ccbddf6d02b7b/artifacts
+end_time: 1713790705894
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2b3fa345ee844f13af9ccbddf6d02b7b
+run_name: placid-hawk-601
+run_uuid: 2b3fa345ee844f13af9ccbddf6d02b7b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713790704154
+status: 3
+tags: []
+user_id: liang

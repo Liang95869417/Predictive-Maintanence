@@ -1,0 +1,97 @@
+INFO 2024-04-22 14:44:02,205 [root:eda.py:setup:40]
+Created type_of_failure column
+
+INFO 2024-04-22 14:44:02,629 [root:eda.py:question_one:53]
+EDA Question 1 complete
+
+INFO 2024-04-22 14:44:02,692 [root:eda.py:question_two:66]
+EDA Question 2 complete
+
+INFO 2024-04-22 14:44:02,832 [root:eda.py:question_three:107]
+EDA Question 3 complete
+
+INFO 2024-04-22 14:44:02,919 [root:eda.py:question_four:137]
+EDA Question 4 complete
+
+INFO 2024-04-22 14:44:03,065 [root:eda.py:question_five:149]
+EDA Question 5 complete
+
+INFO 2024-04-22 14:45:18,839 [root:eda.py:setup:40]
+Created type_of_failure column
+
+INFO 2024-04-22 14:45:19,233 [root:eda.py:question_one:53]
+EDA Question 1 complete
+
+INFO 2024-04-22 14:45:19,293 [root:eda.py:question_two:66]
+EDA Question 2 complete
+
+INFO 2024-04-22 14:45:19,370 [root:eda.py:question_three:107]
+EDA Question 3 complete
+
+INFO 2024-04-22 14:45:19,430 [root:eda.py:question_four:137]
+EDA Question 4 complete
+
+INFO 2024-04-22 14:45:19,565 [root:eda.py:question_five:149]
+EDA Question 5 complete
+
+INFO 2024-04-22 14:53:41,665 [root:data.py:create_target:43]
+Target variable created
+
+INFO 2024-04-22 14:53:41,673 [root:data.py:convert_to_celsius:52]
+Temperature converted to celsius
+
+INFO 2024-04-22 14:53:41,678 [root:data.py:ordinal_encoding:59]
+Type encoded
+
+INFO 2024-04-22 14:53:41,686 [root:data.py:feature_scaling:84]
+Features scaled
+
+INFO 2024-04-22 14:53:42,760 [root:data.py:sampling:104]
+Data sampled
+
+INFO 2024-04-22 14:58:04,707 [root:train.py:model1:75]
+MODEL 1
+
+INFO 2024-04-22 14:58:04,713 [root:train.py:model1:76]
+Best Model: RandomForestClassifier() 
+
+INFO 2024-04-22 14:58:04,723 [root:train.py:model1:77]
+Classification Report:
+              precision    recall  f1-score      support
+0              0.998660  0.983174  0.990856  3031.000000
+1              0.991882  0.999358  0.995606  6235.000000
+accuracy       0.994064  0.994064  0.994064     0.994064
+macro avg      0.995271  0.991266  0.993231  9266.000000
+weighted avg   0.994099  0.994064  0.994052  9266.000000
+
+INFO 2024-04-22 14:58:08,054 [root:train.py:model2:106]
+model 0 logged to mlflow
+
+INFO 2024-04-22 14:58:23,820 [root:train.py:model2:106]
+model 1 logged to mlflow
+
+INFO 2024-04-22 14:58:25,895 [root:train.py:model2:106]
+model 2 logged to mlflow
+
+INFO 2024-04-22 14:58:36,607 [root:train.py:model2:106]
+model 3 logged to mlflow
+
+INFO 2024-04-22 14:58:36,858 [root:train.py:model2:123]
+MODEL 2: 
+
+INFO 2024-04-22 14:58:36,860 [root:train.py:model2:124]
+Best Model: RandomForestClassifier()
+
+INFO 2024-04-22 14:58:36,876 [root:train.py:model2:125]
+Classification Report:
+              precision    recall  f1-score     support
+0              0.996089  1.000000  0.998040  1528.00000
+1              0.996835  0.999365  0.998099  1576.00000
+2              0.993667  1.000000  0.996823  1569.00000
+3              0.981772  0.998083  0.989861  1565.00000
+4              0.982346  0.998718  0.990464  1560.00000
+5              0.997135  0.948229  0.972067  1468.00000
+accuracy       0.991150  0.991150  0.991150     0.99115
+macro avg      0.991307  0.990733  0.990892  9266.00000
+weighted avg   0.991240  0.991150  0.991072  9266.00000
+

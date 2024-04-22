@@ -63,10 +63,11 @@ def preprocess():
     df = ordinal_encoding(df)
     df = feature_scaling(df)
     df = sampling(df)
+    print(df['Type'].value_counts())
     df.to_csv(Path(config.DATA_DIR, "processed/preprocessed.csv"), index=False)
     return df
 
-# @app.command()
+@app.command()
 def split_data():
     df = pd.read_csv(Path(config.DATA_DIR, "processed/preprocessed.csv"))
     target = 'type_of_failure'
@@ -75,7 +76,7 @@ def split_data():
     test_data.to_csv(Path(config.DATA_DIR, "processed/test.csv"), index=False)
 
 
-# @app.command()
+@app.command()
 def train():
     df = pd.read_csv(Path(config.DATA_DIR, "processed/train.csv"))
     scores_df, best_model, best_model_name, report = model1(df)
@@ -124,8 +125,8 @@ def train():
 
 
 # get_data()
-eda(get_data())
+# eda(get_data())
 # df = preprocess()
 # split_data()
 # print(df)
-# train()
+train()

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/3f9db040561042ef97718ebae6466998/artifacts
+end_time: 1713790688053
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3f9db040561042ef97718ebae6466998
+run_name: tasteful-hawk-773
+run_uuid: 3f9db040561042ef97718ebae6466998
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713790686044
+status: 3
+tags: []
+user_id: liang

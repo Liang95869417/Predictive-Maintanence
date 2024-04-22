@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/30e5f666d824447a8f45ade7eb04e926/artifacts
+end_time: 1713790716604
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 30e5f666d824447a8f45ade7eb04e926
+run_name: luminous-shrew-47
+run_uuid: 30e5f666d824447a8f45ade7eb04e926
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713790713128
+status: 3
+tags: []
+user_id: liang

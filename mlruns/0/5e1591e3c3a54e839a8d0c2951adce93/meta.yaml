@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/5e1591e3c3a54e839a8d0c2951adce93/artifacts
+end_time: 1713790684567
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5e1591e3c3a54e839a8d0c2951adce93
+run_name: capricious-gull-200
+run_uuid: 5e1591e3c3a54e839a8d0c2951adce93
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713790681291
+status: 3
+tags: []
+user_id: liang

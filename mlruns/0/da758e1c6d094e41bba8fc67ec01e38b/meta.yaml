@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/da758e1c6d094e41bba8fc67ec01e38b/artifacts
+end_time: 1713790655827
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: da758e1c6d094e41bba8fc67ec01e38b
+run_name: whimsical-fowl-429
+run_uuid: da758e1c6d094e41bba8fc67ec01e38b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713790652560
+status: 3
+tags: []
+user_id: liang
