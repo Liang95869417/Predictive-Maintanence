@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/75d78979aa9445698f0cb39d1b60b471/artifacts
+end_time: 1713791481496
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 75d78979aa9445698f0cb39d1b60b471
+run_name: bittersweet-ram-325
+run_uuid: 75d78979aa9445698f0cb39d1b60b471
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713791479810
+status: 3
+tags: []
+user_id: liang

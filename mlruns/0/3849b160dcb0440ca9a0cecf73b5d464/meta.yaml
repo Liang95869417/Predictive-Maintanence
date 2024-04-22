@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/3849b160dcb0440ca9a0cecf73b5d464/artifacts
+end_time: 1713791465269
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3849b160dcb0440ca9a0cecf73b5d464
+run_name: sincere-toad-922
+run_uuid: 3849b160dcb0440ca9a0cecf73b5d464
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713791462560
+status: 3
+tags: []
+user_id: liang

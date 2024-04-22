@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/656523313cb243609a7aab2f60902aae/artifacts
+end_time: 1713791517457
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 656523313cb243609a7aab2f60902aae
+run_name: awesome-ape-248
+run_uuid: 656523313cb243609a7aab2f60902aae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713791515644
+status: 3
+tags: []
+user_id: liang

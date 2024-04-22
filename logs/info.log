@@ -95,3 +95,49 @@ accuracy       0.991150  0.991150  0.991150     0.99115
 macro avg      0.991307  0.990733  0.990892  9266.00000
 weighted avg   0.991240  0.991150  0.991072  9266.00000
 
+INFO 2024-04-22 15:11:28,853 [root:train.py:model1:75]
+MODEL 1
+
+INFO 2024-04-22 15:11:28,860 [root:train.py:model1:76]
+Best Model: RandomForestClassifier() 
+
+INFO 2024-04-22 15:11:28,869 [root:train.py:model1:77]
+Classification Report:
+              precision    recall  f1-score      support
+0              0.998660  0.983174  0.990856  3031.000000
+1              0.991882  0.999358  0.995606  6235.000000
+accuracy       0.994064  0.994064  0.994064     0.994064
+macro avg      0.995271  0.991266  0.993231  9266.000000
+weighted avg   0.994099  0.994064  0.994052  9266.000000
+
+INFO 2024-04-22 15:11:31,576 [root:train.py:model2:106]
+model 0 logged to mlflow
+
+INFO 2024-04-22 15:11:46,779 [root:train.py:model2:106]
+model 1 logged to mlflow
+
+INFO 2024-04-22 15:11:48,805 [root:train.py:model2:106]
+model 2 logged to mlflow
+
+INFO 2024-04-22 15:11:57,458 [root:train.py:model2:106]
+model 3 logged to mlflow
+
+INFO 2024-04-22 15:11:57,641 [root:train.py:model2:123]
+MODEL 2: 
+
+INFO 2024-04-22 15:11:57,643 [root:train.py:model2:124]
+Best Model: RandomForestClassifier()
+
+INFO 2024-04-22 15:11:57,651 [root:train.py:model2:125]
+Classification Report:
+              precision    recall  f1-score     support
+0              0.996089  1.000000  0.998040  1528.00000
+1              0.998732  0.999365  0.999049  1576.00000
+2              0.993038  1.000000  0.996507  1569.00000
+3              0.981144  0.997444  0.989227  1565.00000
+4              0.982357  0.999359  0.990785  1560.00000
+5              0.996421  0.948229  0.971728  1468.00000
+accuracy       0.991150  0.991150  0.991150     0.99115
+macro avg      0.991297  0.990733  0.990889  9266.00000
+weighted avg   0.991238  0.991150  0.991073  9266.00000
+

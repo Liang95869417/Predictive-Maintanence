@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/home/liang/Documents/MyProjects/Predictive-Maintanence')
+
 import uvicorn
 from fastapi import FastAPI
 from backend.model import User

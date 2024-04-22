@@ -1,0 +1,15 @@
+artifact_uri: file:///home/liang/Documents/MyProjects/Predictive-Maintanence/mlruns/0/174b946b5fca4c178a1dba9bd2b511b5/artifacts
+end_time: 1713791479554
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 174b946b5fca4c178a1dba9bd2b511b5
+run_name: omniscient-cow-37
+run_uuid: 174b946b5fca4c178a1dba9bd2b511b5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713791477878
+status: 3
+tags: []
+user_id: liang
