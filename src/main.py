@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/home/liang/Documents/MyProjects/Predictive-Maintanence')
 import warnings
 from pathlib import Path
 import typer
@@ -53,7 +55,7 @@ def eda(df):
     with open(Path(ARTIFACTS_DIR, "eda.json"), "w+") as f:
         json.dump(json_obj, f)
     
-# @app.command()
+@app.command()
 def preprocess():
     df = pd.read_csv(Path(config.DATA_DIR, "raw/data.csv"))
     df = create_target(df)

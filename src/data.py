@@ -4,7 +4,7 @@ import pickle
 
 import numpy as np
 import pandas as pd
-from imblearn.over_sampling import SMOTE
+from imblearn.over_sampling import SMOTE, SMOTENC
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import (
@@ -85,10 +85,20 @@ def feature_scaling(df: pd.DataFrame) -> pd.DataFrame:
     return df_scaled
 
 
+# def sampling(df: pd.DataFrame) -> pd.DataFrame:
+#     X = df.drop(["type_of_failure"], axis=1)
+#     y = df["type_of_failure"]
+#     oversample = SMOTE()
+#     X, y = oversample.fit_resample(X, y)
+#     sampled_df = pd.concat([X, y], axis=1)
+#     logger.info("Data sampled")
+#     return sampled_df
+
 def sampling(df: pd.DataFrame) -> pd.DataFrame:
     X = df.drop(["type_of_failure"], axis=1)
     y = df["type_of_failure"]
-    oversample = SMOTE()
+    categorical_features_indices = [df.columns.get_loc(col) for col in ['Type', 'Machine failure'] if col in df]
+    oversample = SMOTENC(categorical_features=categorical_features_indices)
     X, y = oversample.fit_resample(X, y)
     sampled_df = pd.concat([X, y], axis=1)
     logger.info("Data sampled")
