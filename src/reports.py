@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/home/liang/Documents/MyProjects/Predictive-Maintanence')
+
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -26,7 +29,7 @@ def data_report():
     ])
 
     classification_performance_report.run(reference_data=ref_data, current_data=cur_data, column_mapping = None)
-    classification_performance_report.save_html(Path(REPORTS_DIR, 'data_report.html'))
+    classification_performance_report.save_html(str(Path(REPORTS_DIR, 'data_report.html')))
 
     
 
@@ -71,7 +74,7 @@ def model1_report():
     ])
 
     classification_performance_report.run(reference_data=ref_merged, current_data=cur_merged, column_mapping = cm)
-    classification_performance_report.save_html(Path(REPORTS_DIR, 'model_1_report.html'))
+    classification_performance_report.save_html(str(Path(REPORTS_DIR, 'model_1_report.html')))
 
 def model2_report():
     ref_data = pd.read_csv(Path(DATA_DIR, "processed/train.csv"))
@@ -114,7 +117,7 @@ def model2_report():
     ])
 
     classification_performance_report.run(reference_data=ref_merged, current_data=cur_merged, column_mapping = cm)
-    classification_performance_report.save_html(Path(REPORTS_DIR, 'model_2_report.html'))
+    classification_performance_report.save_html(str(Path(REPORTS_DIR, 'model_2_report.html')))
 
 
 def generate_reports():
