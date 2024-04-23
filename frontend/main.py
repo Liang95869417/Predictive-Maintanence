@@ -12,8 +12,7 @@ pages = st.sidebar.radio("Select a Page", [
     "Motivation and Metrics",
     "Application Features",
     "Methodology and Data",
-    "Architecture and Pipeline",
-    "Conclusion"
+    "Architecture and Pipeline"
 ])
 
 # Define each page
@@ -22,7 +21,7 @@ if pages == "Overview":
     st.markdown('''
     ## Overview
     ---
-    This design doc outlines the development of a web application for predictive maintenance using a synthetic dataset. The application will utilize machine learning models that:
+    Welcome to the Predictive Maintenance Web Application. This platform is designed to leverage advanced machine learning models to predict and identify equipment failures in industrial settings. Utilizing a synthetic dataset that mirrors real-world conditions, our application provides insights based on key process parameters such as temperatures, rotational speed, torque, and tool wear. By predicting potential equipment failures before they occur, maintenance teams are empowered to act preemptively, minimizing downtime and extending equipment lifespan. The application will utilize machine learning models that:
     - Evaluates whether the equipment will fail or not based on process parameters, including air and process temperatures, rotational speed, torque, and tool wear.
     - Identifies the type of equipment failure in the event of a failure, based on the same process parameters.
     ''')
@@ -32,14 +31,15 @@ elif pages == "Motivation and Metrics":
     st.markdown('''
     ## Motivation
     ---
-    Predictive maintenance can help companies minimize downtime, reduce repair costs, and improve operational efficiency. Developing a web application for predictive maintenance can provide users with real-time insights into equipment performance, enabling proactive maintenance, and reducing unplanned downtime.
-    
+    Predictive maintenance transforms traditional maintenance strategies by utilizing data-driven insights to reduce operational costs and improve efficiency. Our application targets these advantages, delivering real-time analytics that guide maintenance decisions, optimize resource allocation, and enhance equipment reliability.
+
     ## Success Metrics
     ---
-    The success of the project will be measured based on the following metrics:
-    - Precision, recall, and F1 score of the machine learning models.
-    - Responsiveness and ease of use of the web application.
-    - Reduction in unplanned downtime and repair costs
+    The effectiveness of our application is measured through:
+    - **Model Accuracy**: Precision, recall, and F1 score, ensuring reliable predictions.
+    - **User Experience**: Application responsiveness and intuitiveness.
+    - **Operational Impact**: Demonstrable reduction in downtime and maintenance costs.
+
     ''')
 
 elif pages == "Application Features":
@@ -134,8 +134,3 @@ elif pages == "Architecture and Pipeline":
     `CI/CD Pipeline`: The pipeline is automated using GitHub Actions, which allows for continuous integration and deployment of the application. This automation ensures that the application is always up-to-date and provides a consistent experience for users.
     ''')
 
-elif pages == "Conclusion":
-    st.title('Conclusion')
-    st.markdown('''
-    This design doc outlines the development of a web application for predictive maintenance using a synthetic dataset. The application will utilize a machine learning model that identifies equipment failures based on process parameters, including air and process temperatures, rotational speed, torque, and tool wear. The web application will be built using FastAPI and Streamlit and deployed using Docker and Digital Ocean droplets.
-    ''')

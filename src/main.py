@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/liang/Documents/MyProjects/Predictive-Maintanence')
+sys.path.append('C:\Predictive-Maintanence')
 import warnings
 from pathlib import Path
 import typer
@@ -127,6 +127,6 @@ def train():
 # get_data()
 # eda(get_data())
 # df = preprocess()
-# split_data()
+split_data()
 # print(df)
-train()
+# train()

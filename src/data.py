@@ -97,7 +97,7 @@ def feature_scaling(df: pd.DataFrame) -> pd.DataFrame:
 def sampling(df: pd.DataFrame) -> pd.DataFrame:
     X = df.drop(["type_of_failure"], axis=1)
     y = df["type_of_failure"]
-    categorical_features_indices = [df.columns.get_loc(col) for col in ['Type', 'Machine failure'] if col in df]
+    categorical_features_indices = [df.columns.get_loc(col) for col in ['Type', 'type_of_failure', 'Machine failure'] if col in df]
     oversample = SMOTENC(categorical_features=categorical_features_indices)
     X, y = oversample.fit_resample(X, y)
     sampled_df = pd.concat([X, y], axis=1)

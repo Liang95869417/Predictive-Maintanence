@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/liang/Documents/MyProjects/Predictive-Maintanence')
+sys.path.append('C:\\Predictive-Maintanence')
 
 import uvicorn
 from fastapi import FastAPI
@@ -34,7 +34,6 @@ def predict(data: User):
     process_temp = received['process_temp']
 
     result1, result2 = prediction(type, rpm, torque, tool_wear, air_temp, process_temp)
-
 
     return {"Machine Failure: ": result1,
             "Type of Failure: ": result2}
