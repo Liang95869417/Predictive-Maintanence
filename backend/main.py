@@ -1,6 +1,3 @@
-import sys
-sys.path.append('C:\\Predictive-Maintanence')
-
 import uvicorn
 from fastapi import FastAPI
 from backend.model import User
@@ -56,5 +53,6 @@ def get_eda():
 
 
 if __name__ == "__main__":
-    uvicorn.run(appl, host="0.0.0.0", port=8000)
+    import os
+    uvicorn.run(appl, host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
 

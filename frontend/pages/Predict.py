@@ -1,11 +1,11 @@
-import json
+import os
 import pandas as pd
 import numpy as np
 import streamlit as st
 import requests
 # from config.config import logger
 
-app_url = "http://localhost:8000"
+app_url = os.getenv('FASTAPI_ENDPOINT', 'http://fastapi:8080')
 endpoint = "/predict"
 model_url = f"{app_url}{endpoint}"
 

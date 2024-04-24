@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from annotated_text import annotated_text
 import requests
@@ -5,7 +6,7 @@ import pandas as pd
 import numpy as np
 import json
 
-app_url = "http://localhost:8000"
+app_url = os.getenv('FASTAPI_ENDPOINT', 'http://fastapi:8080')
 endpoint = "/metrics"
 model_url = f"{app_url}{endpoint}"
 

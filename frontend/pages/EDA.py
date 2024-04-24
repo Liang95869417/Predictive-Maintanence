@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from annotated_text import annotated_text
 import requests
@@ -7,7 +8,7 @@ import json
 import plotly.express as px
 import plotly.graph_objs as go
 
-app_url = "http://localhost:8000"
+app_url = os.getenv('FASTAPI_ENDPOINT', 'http://fastapi:8080')
 endpoint = "/eda"
 model_url = f"{app_url}{endpoint}"
 

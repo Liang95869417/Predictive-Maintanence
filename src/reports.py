@@ -1,6 +1,3 @@
-import sys
-sys.path.append('/home/liang/Documents/MyProjects/Predictive-Maintanence')
-
 import pandas as pd
 import numpy as np
 from pathlib import Path

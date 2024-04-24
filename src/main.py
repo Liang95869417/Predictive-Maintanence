@@ -1,5 +1,5 @@
-import sys
-sys.path.append('C:\Predictive-Maintanence')
+# import sys
+# sys.path.append('C:\Predictive-Maintanence')
 import warnings
 from pathlib import Path
 import typer

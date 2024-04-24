@@ -1,5 +1,8 @@
 FROM python:3.9-slim
 
+WORKDIR /backend
+
+ENV PYTHONUNBUFFERED True
 
 COPY /backend/requirements.txt /backend/
 RUN pip install --upgrade pip
@@ -12,8 +15,6 @@ COPY ./src/eda.py /src/
 COPY ./config/ /config/
 COPY ./ /backend/
 
-WORKDIR /backend
+EXPOSE 8080
 
-EXPOSE 8000
-
-CMD ["uvicorn", "backend.main:appl","--reload","--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "backend.main:appl","--reload","--host", "0.0.0.0", "--port", "8080"]

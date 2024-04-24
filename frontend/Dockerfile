@@ -6,6 +6,8 @@ RUN apt update && apt install gcc python3-dev git -y --no-install-recommends
 RUN pip install --no-cache-dir -r requirements.txt 
 COPY . /frontend
 
+
 EXPOSE 8501
 
+# Run app.py when the container launches
 CMD ["streamlit", "run", "main.py"]
