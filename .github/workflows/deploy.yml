@@ -28,15 +28,28 @@ jobs:
       - name: Configure Docker for Google Cloud
         run: gcloud auth configure-docker
 
-      - name: Build and push Docker image
+      - name: Build and push backend Docker image
         run: |
-          docker build -t gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance:latest .
-          docker push gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance:latest
+          docker build -t gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest -f backend/Dockerfile .
+          docker push gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest
 
-      - name: Deploy to Cloud Run
+      - name: Build and push frontend Docker image
         run: |
-          gcloud run deploy predictive-maintenance \
-            --image gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance:latest \
+          docker build -t gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest -f frontend/Dockerfile .
+          docker push gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest
+
+      - name: Deploy backend to Cloud Run
+        run: |
+          gcloud run deploy predictive-maintenance-backend \
+            --image gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest \
+            --region us-central1 \
+            --platform managed \
+            --allow-unauthenticated
+
+      - name: Deploy frontend to Cloud Run
+        run: |
+          gcloud run deploy predictive-maintenance-frontend \
+            --image gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest \
             --region us-central1 \
             --platform managed \
             --allow-unauthenticated
