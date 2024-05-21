@@ -25,11 +25,6 @@ jobs:
         with:
           version: 'latest'
 
-      - name: Extract Project ID
-        id: extract_project_id
-        run: |
-          echo "PROJECT_ID=$(echo '${{ secrets.GCP_SA_KEY }}' | jq -r .project_id)" >> $GITHUB_ENV
-
       - name: Configure Docker for Google Cloud
         run: gcloud auth configure-docker
 
