@@ -3,7 +3,7 @@
 ## Description
 
 This project is a web-based application designed for predictive maintenance in industrial settings. It leverages advanced machine learning models to predict equipment failures before they occur, minimizing downtime and extending equipment lifespan.
-Features
+
 
 ## Interactive 
 - Web Interface: Built with Streamlit, offering a user-friendly interface for navigation across various insightful pages.
