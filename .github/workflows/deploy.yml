@@ -1,4 +1,4 @@
-name: Deploy ML Model Web App
+name: Deploy to Cloud Run
 
 on:
   push:
@@ -7,23 +7,33 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
     steps:
-      - name: Checkout Repo
+      - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: SSH into server
-        uses: appleboy/ssh-action@master
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
         with:
-          host: ${{ secrets.HOST }}
-          username: root
-          key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          script: |
-            cd Predictive-Maintenance
-            git pull origin main
-            docker rm -f $(docker ps -aq)
-            docker rmi -f $(docker images -aq)
-            docker-compose build
-            docker-compose up -d
+          version: 'latest'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Extract Project ID
+        id: extract_project_id
+        run: |
+          echo "PROJECT_ID=$(echo '${{ secrets.GCP_SA_KEY }}' | jq -r .project_id)" >> $GITHUB_ENV
+
+      - name: Configure Docker for Google Cloud
+        run: gcloud auth configure-docker
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/predictive-maintenance:latest .
+          docker push gcr.io/${{ env.PROJECT_ID }}/predictive-maintenance:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy predictive-maintenance \
+            --image gcr.io/${{ env.PROJECT_ID }}/predictive-maintenance:latest \
+            --region us-central1 \
+            --platform managed \
+            --allow-unauthenticated
