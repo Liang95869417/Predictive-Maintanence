@@ -28,6 +28,9 @@ jobs:
       - name: Configure Docker for Google Cloud
         run: gcloud auth configure-docker eu-west1-docker.pkg.dev
 
+      - name: Debug Environment Variables
+        run: env | grep GCP
+
       - name: Build and push backend Docker image
         run: |
           docker build -t eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest -f backend/Dockerfile .
