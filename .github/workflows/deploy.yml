@@ -26,30 +26,30 @@ jobs:
           version: 'latest'
 
       - name: Configure Docker for Google Cloud
-        run: gcloud auth configure-docker
+        run: gcloud auth configure-docker eu-west1-docker.pkg.dev
 
       - name: Build and push backend Docker image
         run: |
-          docker build -t gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest -f backend/Dockerfile .
-          docker push gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest
+          docker build -t eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest -f backend/Dockerfile .
+          docker push eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest
 
       - name: Build and push frontend Docker image
         run: |
-          docker build -t gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest -f frontend/Dockerfile .
-          docker push gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest
+          docker build -t eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest -f frontend/Dockerfile .
+          docker push eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest
 
       - name: Deploy backend to Cloud Run
         run: |
           gcloud run deploy predictive-maintenance-backend \
-            --image gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest \
-            --region us-central1 \
+            --image eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest \
+            --region eu-west1 \
             --platform managed \
             --allow-unauthenticated
 
       - name: Deploy frontend to Cloud Run
         run: |
           gcloud run deploy predictive-maintenance-frontend \
-            --image gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest \
-            --region us-central1 \
+            --image eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest \
+            --region eu-west1 \
             --platform managed \
             --allow-unauthenticated
