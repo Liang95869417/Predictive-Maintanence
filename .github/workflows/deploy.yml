@@ -49,7 +49,7 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --vpc-connector pm-cd-vpc \
-            --timeout 600s \
+            --timeout 900s \
             --verbosity debug
 
       - name: Deploy frontend to Cloud Run
@@ -60,5 +60,5 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --vpc-connector pm-cd-vpc \
-            --timeout 600s \
+            --timeout 900s \
             --verbosity debug
