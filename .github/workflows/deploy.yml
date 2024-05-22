@@ -48,7 +48,7 @@ jobs:
             --region europe-west1 \
             --platform managed \
             --allow-unauthenticated \
-            --vpc-connector my-vpc-connector
+            --vpc-connector default
 
       - name: Deploy frontend to Cloud Run
         run: |
@@ -57,4 +57,4 @@ jobs:
             --region europe-west1 \
             --platform managed \
             --allow-unauthenticated \
-            --vpc-connector my-vpc-connector
+            --vpc-connector default
