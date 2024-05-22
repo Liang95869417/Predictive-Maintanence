@@ -47,7 +47,8 @@ jobs:
             --image eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest \
             --region europe-west1 \
             --platform managed \
-            --allow-unauthenticated
+            --allow-unauthenticated \
+            --vpc-connector my-vpc-connector
 
       - name: Deploy frontend to Cloud Run
         run: |
@@ -55,4 +56,5 @@ jobs:
             --image eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest \
             --region europe-west1 \
             --platform managed \
-            --allow-unauthenticated
+            --allow-unauthenticated \
+            --vpc-connector my-vpc-connector
