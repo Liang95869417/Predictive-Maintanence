@@ -26,33 +26,33 @@ jobs:
           version: 'latest'
 
       - name: Configure Docker for Google Cloud
-        run: gcloud auth configure-docker eu-west1-docker.pkg.dev
+        run: gcloud auth configure-docker eu.gcr.io
 
       - name: Debug Environment Variables
         run: env | grep GCP
 
       - name: Build and push backend Docker image
         run: |
-          docker build -t eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest -f backend/Dockerfile .
-          docker push eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest
+          docker build -t eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest -f backend/Dockerfile .
+          docker push eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest
 
       - name: Build and push frontend Docker image
         run: |
-          docker build -t eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest -f frontend/Dockerfile .
-          docker push eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest
+          docker build -t eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest -f frontend/Dockerfile .
+          docker push eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest
 
       - name: Deploy backend to Cloud Run
         run: |
           gcloud run deploy predictive-maintenance-backend \
-            --image eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest \
-            --region eu-west1 \
+            --image eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-backend:latest \
+            --region europe-west1 \
             --platform managed \
             --allow-unauthenticated
 
       - name: Deploy frontend to Cloud Run
         run: |
           gcloud run deploy predictive-maintenance-frontend \
-            --image eu-west1-docker.pkg.dev/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest \
-            --region eu-west1 \
+            --image eu.gcr.io/${{ env.GCP_PROJECT }}/predictive-maintenance-frontend:latest \
+            --region europe-west1 \
             --platform managed \
             --allow-unauthenticated
