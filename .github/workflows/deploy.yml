@@ -48,7 +48,7 @@ jobs:
             --region europe-west1 \
             --platform managed \
             --allow-unauthenticated \
-            --vpc-connector deploy-network \
+            --vpc-connector cd-vpc \
             --timeout 900s \
             --verbosity debug
 
@@ -59,6 +59,6 @@ jobs:
             --region europe-west1 \
             --platform managed \
             --allow-unauthenticated \
-            --vpc-connector deploy-network \
+            --vpc-connector cd-vpc \
             --timeout 900s \
             --verbosity debug
